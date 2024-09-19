@@ -1,3 +1,4 @@
+from enum import Enum
 import math
 import numpy as np
 import pandas as pd
@@ -8,7 +9,6 @@ References:
 https://www.mdpi.com/2079-9292/12/18/3971#sec3dot2dot1-electronics-12-03971
 """
 
-
 class FrequencyFeatureExtractor:
     def __init__(self):
         self.feature_names = [
@@ -18,7 +18,8 @@ class FrequencyFeatureExtractor:
             'rms_mid_frequency',
             'rms_high_frequency',
             'rms_overall'
-        ]
+            ]
+
         self.feature_calculators = [
             self._calculate_peak_frequency,
             self._calculate_peak_amplitude,
@@ -94,6 +95,7 @@ class TimeFeatureExtractor:
             'Kurtosis', 
             'Skewness'
             ]
+
         self.feature_calculators = [
             self._calculate_std,
             self._calculate_mean,
